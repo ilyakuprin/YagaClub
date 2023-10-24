@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfd5c4caa42ad044a22c4ecf717ecd2, type: 3}
+  m_Name: _PestsControlPointsConfig
+  m_EditorClassIdentifier: 
+  _pestControlPointConfig:
+  - {fileID: 11400000, guid: a400eaaafbcd11a40923af197780bb00, type: 2}
+  - {fileID: 11400000, guid: cfd8f06c34baa824a8570335de06d2c5, type: 2}
+  - {fileID: 11400000, guid: 629c4ad3c15548a4ba464c02fc0a0eda, type: 2}
