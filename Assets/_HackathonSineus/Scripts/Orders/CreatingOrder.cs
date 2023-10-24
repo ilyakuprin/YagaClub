@@ -5,7 +5,7 @@ using Zenject;
 
 namespace YagaClub
 {
-    public class CreatingOrder : IInitializable
+    public class CreatingOrder : IInitializable, IDisposable
     {
         public event Action OrderCreated;
         public event Action<string> DishRemoved;
@@ -17,21 +17,27 @@ namespace YagaClub
         private readonly Dictionary<string, CookingPoint> _keyValuePairs =
             new Dictionary<string, CookingPoint>();
         private readonly ObjectForCoockingConfig[] _orderConfigs;
+        private readonly AcceptanceOrder _acceptanceOrder;
 
         private List<string> _listDishNames;
 
-        public CreatingOrder(CookingsObjectConfig cookingsObject, CookingPoint[] cookingPoints)
+        public CreatingOrder(AcceptanceOrder acceptanceOrder,
+                             CookingsObjectConfig cookingsObject,
+                             CookingPoint[] cookingPoints)
         {
             _countPoints = cookingsObject.GetSize;
             _dishes = new string[_countPoints][];
             _orderConfigs = cookingsObject.GetObjects();
             _cookingPoints = cookingPoints;
+            _acceptanceOrder = acceptanceOrder;
         }
 
         public int GetSizeList { get => _listDishNames.Count; }
 
         public void Initialize()
         {
+            _acceptanceOrder.OrderAccepted += OnCreatOrder;
+
             for (int i = 0; i < _countPoints; i++)
                 _dishes[i] = _orderConfigs[i].GetCopyDishes();
 
@@ -99,5 +105,7 @@ namespace YagaClub
                 for (int k = 0; k < _dishes[i].Length; k++)
                     _keyValuePairs.Add(_dishes[i][k], _cookingPoints[i]);
         }
+
+        public void Dispose() => _acceptanceOrder.OrderAccepted -= OnCreatOrder;
     }
 }

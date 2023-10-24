@@ -19,7 +19,7 @@ namespace YagaClub
         }
         public void Initialize()
         {
-            _creatingOrder.OrderCreated += OnAcceptOrder;
+            _acceptanceOrder.OrderAccepted += OnAcceptOrder;
             _giveOrderPoint.GetGiveOrderTimer.TimerIsOver += OnGiveOrder;
         }
 
@@ -31,7 +31,7 @@ namespace YagaClub
 
         public void Dispose()
         {
-            _creatingOrder.OrderCreated -= OnAcceptOrder;
+            _acceptanceOrder.OrderAccepted -= OnAcceptOrder;
             _giveOrderPoint.GetGiveOrderTimer.TimerIsOver -= OnGiveOrder;
         }
     }

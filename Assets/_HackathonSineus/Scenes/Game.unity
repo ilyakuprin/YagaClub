@@ -3082,6 +3082,7 @@ GameObject:
   - component: {fileID: 911982840}
   - component: {fileID: 911982839}
   - component: {fileID: 911982838}
+  - component: {fileID: 911982841}
   m_Layer: 0
   m_Name: AcceptOrder
   m_TagString: Untagged
@@ -3152,19 +3153,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 911982839}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 931975250}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &911982839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3203,6 +3192,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911982836}
   m_CullTransparentMesh: 1
+--- !u!114 &911982841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911982836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c64de9808c406428b283e82db13558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 911982838}
 --- !u!1 &912725821
 GameObject:
   m_ObjectHideFlags: 0
@@ -3460,6 +3462,7 @@ GameObject:
   - component: {fileID: 931975249}
   - component: {fileID: 931975248}
   - component: {fileID: 931975250}
+  - component: {fileID: 931975251}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -3622,6 +3625,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &931975251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931975246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd70d0b7a48d5fc48890272c3e6cbfac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 931975250}
 --- !u!1 &935975995
 GameObject:
   m_ObjectHideFlags: 0
