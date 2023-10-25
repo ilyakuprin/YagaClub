@@ -9,6 +9,9 @@ namespace YagaClub
     {
         [SerializeField] private PestControlPointConfig[] _pestControlPointConfig;
 
+        [field: SerializeField, Range(0, 50)] public float MinTimeSpawn { get; private set; }
+        [field: SerializeField, Range(0, 50)] public float MaxTimeSpawn { get; private set; }
+
         public int GetSize { get => _pestControlPointConfig.Length; }
 
         public PestControlPointConfig GetObject(CookingObjects cookingObjects)
@@ -29,6 +32,14 @@ namespace YagaClub
         }
 
         private void OnValidate()
+        {
+            CheckDuplicatePestPoints();
+
+            if (MaxTimeSpawn < MinTimeSpawn)
+                MinTimeSpawn = MaxTimeSpawn;
+        }
+
+        private void CheckDuplicatePestPoints()
         {
             int enumCount = Enum.GetNames(typeof(CookingObjects)).Length;
 

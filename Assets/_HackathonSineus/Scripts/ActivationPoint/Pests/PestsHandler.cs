@@ -5,8 +5,7 @@ namespace YagaClub
 {
     public class PestsHandler : MonoBehaviour
     {
-        [SerializeField] private float _minTime;
-        [SerializeField] private float _maxTime;
+        private PestsControlPointsConfig _pests;
         private CoroutineTimer _timer;
         private CreatingOrder _creatingOrder;
         private PestControlPoint[] _pestPoints;
@@ -19,12 +18,14 @@ namespace YagaClub
         [Inject]
         private void Constructor(CreatingOrder creatingOrder,
                                  PestControlPoint[] pestPoints,
-                                 CookingPoint[] cookingPoints)
+                                 CookingPoint[] cookingPoints,
+                                 PestsControlPointsConfig pestsControlPointsConfig)
         {
             _timer = new CoroutineTimer(this);
             _creatingOrder = creatingOrder;
             _pestPoints = pestPoints;
             _cookingPoints = cookingPoints;
+            _pests = pestsControlPointsConfig;
         }
 
         private void Awake() => ArrayMappingCookingObj();
@@ -51,7 +52,7 @@ namespace YagaClub
             if (!_lockTimerStarted)
             {
                 _lockTimerStarted = true;
-                float time = Random.Range(_minTime, _maxTime);
+                float time = Random.Range(_pests.MinTimeSpawn, _pests.MaxTimeSpawn);
                 _timer.Set(time);
                 _timer.StartCountingTime();
             }
