@@ -9,9 +9,10 @@ namespace YagaClub
         [SerializeField] private PestControlPoint _pestControlPoint;
         private CoroutineTimer _timer;
         private int _counter = 0;
-        private readonly int _maxCount = 100;
-
         private RewardCompletingOrder _rewardCompletingOrder;
+        private CookingPoint _cookingPoint;
+
+        private readonly int _maxCount = 100;
 
         public PestControlPoint GetPestControlPoint { get => _pestControlPoint; }
 
@@ -27,6 +28,10 @@ namespace YagaClub
             _timer.Set(config.TimeOnePercentReductionQuality);
 
             _rewardCompletingOrder = rewardCompletingOrder;
+
+            foreach (var i in cookingPoints)
+                if (i.GetIntCookingObj == _pestControlPoint.GetIntCookingObj)
+                    _cookingPoint = i;
         }
 
         private void StartTimer() => _timer.StartCountingTime();
@@ -36,7 +41,6 @@ namespace YagaClub
         private void AddCounter()
         {
             _counter++;
-            Debug.Log(_counter);                                                               // нужен ResetCounter где-то
             _rewardCompletingOrder.OnReduceReward(_pestControlPoint.GetIntCookingObj,
                                                   _counter);
 
@@ -44,13 +48,14 @@ namespace YagaClub
                 StartTimer();
         }
 
-        private void ResetCounter() => _counter = 0;                                            // нужен ResetCounter где-то
+        private void ResetCounter(ActivityPoint _) => _counter = 0;
 
         private void OnEnable()
         {
             _pestControlPoint.ColliderActivated += StartTimer;
             _pestControlPoint.ColliderDeactivated += StopTimer;
             _timer.TimerIsOver += AddCounter;
+            _cookingPoint.GetCookingTimer.TimerIsOver += ResetCounter;
         }
 
         private void OnDisable()
@@ -58,9 +63,12 @@ namespace YagaClub
             _pestControlPoint.ColliderActivated -= StartTimer;
             _pestControlPoint.ColliderDeactivated -= StopTimer;
             _timer.TimerIsOver -= AddCounter;
+            _cookingPoint.GetCookingTimer.TimerIsOver -= ResetCounter;
         }
 
         private void OnValidate()
-            => _pestControlPoint ??= GetComponent<PestControlPoint>();
+        {
+            _pestControlPoint ??= GetComponent<PestControlPoint>();  
+        }
     }
 }

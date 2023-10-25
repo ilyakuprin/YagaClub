@@ -10,7 +10,7 @@ namespace YagaClub
         private CreatingOrder _creatingOrder;
         private PestControlPoint[] _pestPoints;
         private CookingPoint[] _cookingPoints;
-        private int _index—orrespondingCooking;
+        private int _indexCorrespondingCooking;
         private bool _lockTimerStarted;
 
         private readonly System.Random _random = new System.Random();
@@ -73,7 +73,7 @@ namespace YagaClub
                     {
                         _pestPoints[i].ActivateCollider();
                         _cookingPoints[i].DeactivateCollider();
-                        _index—orrespondingCooking = i;
+                        _indexCorrespondingCooking = i;
                         break;
                     }
                 }
@@ -82,7 +82,7 @@ namespace YagaClub
 
         private void PestDeactivation()
         {
-            _cookingPoints[_index—orrespondingCooking].ActivateCollider();
+            _cookingPoints[_indexCorrespondingCooking].ActivateCollider();
             UnlockTimerStart();
             OnStartPestSpawnTimer();
         }
