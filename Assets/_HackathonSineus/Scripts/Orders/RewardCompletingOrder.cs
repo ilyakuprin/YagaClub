@@ -12,10 +12,10 @@ namespace YagaClub
         private readonly CreatingOrder _creatingOrder;
         private readonly CookingPoint[] _cookingPoints;
         private readonly ObjectForCoockingConfig[] _orderConfigs;
-        private int _finalReward;
-        private int _reduceReward;
+        private float _finalReward;
+        private float _reduceReward;
         private bool _isTimeOver;
-        private readonly int _oneHundred = 100;
+        private readonly float _oneProcent = 0.01f;
 
         public RewardCompletingOrder(CreatingOrder creatingOrder,
                                      CookingPoint[] cookingPoints,
@@ -31,27 +31,29 @@ namespace YagaClub
             get
             {
                 if (_isTimeOver)
-                    return _reduceReward;
+                    return Mathf.RoundToInt(_reduceReward);
                 else
-                    return _finalReward;
+                    return Mathf.RoundToInt(_finalReward);
             }
         }
 
         public void Initialize() => _creatingOrder.OrderCreated += OnCalculateStartReward;
 
-        public void OnReduceReward(int cookingObj, float countPercent)
+        public void OnReduceReward(int cookingObj)
         {
             for (int i = 0; i < _cookingPoints.Length; i++)
             {
                 if (_cookingPoints[i].GetIntCookingObj == cookingObj)
                 {
-                    float value = _orderConfigs[i].Cost * (countPercent / _oneHundred);
+                    float value = _orderConfigs[i].Cost * _oneProcent;
 
                     if (!_isTimeOver)
-                        _finalReward = Mathf.RoundToInt(_finalReward - value);
+                        _finalReward = _finalReward - value;
 
-                    _reduceReward = Mathf.RoundToInt(_reduceReward - 
-                        value * _orderConfigs[i].CostReductionMultiplier);
+                    _reduceReward = _reduceReward - 
+                        value * _orderConfigs[i].CostReductionMultiplier;
+
+                    break;
                 }
             }
 
@@ -64,16 +66,16 @@ namespace YagaClub
 
             for (int i = 0; i < _creatingOrder.GetSizeList; i++)
             {
-                CookingPoint item =
-                    _creatingOrder.GetActivityPoint(_creatingOrder.GetDishName(i));
+                int cookingObject =
+                    _creatingOrder.GetCookingObject(_creatingOrder.GetDishName(i));
 
                 for (int k = 0; k < _cookingPoints.Length; k ++)
                 {
-                    if (item == _cookingPoints[k])
+                    if (cookingObject == _cookingPoints[k].GetIntCookingObj)
                     {
                         _finalReward += _orderConfigs[k].Cost;
-                        _reduceReward += Mathf.RoundToInt(_orderConfigs[k].Cost *
-                                        _orderConfigs[k].CostReductionMultiplier);
+                        _reduceReward += _orderConfigs[k].Cost *
+                                        _orderConfigs[k].CostReductionMultiplier;
                         break;
                     }
                 }

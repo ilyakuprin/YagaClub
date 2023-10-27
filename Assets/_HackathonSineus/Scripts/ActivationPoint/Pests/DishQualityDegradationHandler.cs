@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -6,6 +7,8 @@ namespace YagaClub
     [RequireComponent(typeof(PestControlPoint))]
     public class DishQualityDegradationHandler : MonoBehaviour
     {
+        public event Action CounterAdded;
+
         [SerializeField] private PestControlPoint _pestControlPoint;
         private CoroutineTimer _timer;
         private int _counter = 0;
@@ -41,14 +44,16 @@ namespace YagaClub
         private void AddCounter()
         {
             _counter++;
-            _rewardCompletingOrder.OnReduceReward(_pestControlPoint.GetIntCookingObj,
-                                                  _counter);
 
             if (_counter < _maxCount)
+            {
+                _rewardCompletingOrder.OnReduceReward(_pestControlPoint.GetIntCookingObj);
+                CounterAdded?.Invoke();
                 StartTimer();
+            }
         }
 
-        private void ResetCounter(ActivityPoint _) => _counter = 0;
+        private void ResetCounter(int _) => _counter = 0;
 
         private void OnEnable()
         {
@@ -67,8 +72,6 @@ namespace YagaClub
         }
 
         private void OnValidate()
-        {
-            _pestControlPoint ??= GetComponent<PestControlPoint>();  
-        }
+            => _pestControlPoint ??= GetComponent<PestControlPoint>();  
     }
 }

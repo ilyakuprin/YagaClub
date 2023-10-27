@@ -64,8 +64,7 @@ namespace YagaClub
             {
                 int index = _random.Next(_creatingOrder.GetSizeList);
                 string dish = _creatingOrder.GetDishName(index);
-                CookingPoint cookingPoint = _creatingOrder.GetActivityPoint(dish);
-                int cookingObject = cookingPoint.GetIntCookingObj;
+                int cookingObject = _creatingOrder.GetCookingObject(dish);
 
                 for (int i = 0; i < _pestPoints.Length; i++)
                 {

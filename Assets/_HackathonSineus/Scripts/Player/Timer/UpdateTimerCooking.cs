@@ -6,7 +6,7 @@ namespace YagaClub
 {
     public class UpdateTimerCooking : UpdateTimer
     {
-        public event Action<ActivityPoint> TimerIsOver;
+        public event Action<int> TimerIsOver;
 
         private readonly CookingPoint _cookingPoint;
         private float _cooldown;
@@ -31,7 +31,7 @@ namespace YagaClub
         protected override void TimerExpired()
         {
             _cookingPoint.StartCoroutine(WaitCooldown());
-            TimerIsOver?.Invoke(_cookingPoint);
+            TimerIsOver?.Invoke(_cookingPoint.GetIntCookingObj);
         }
 
         private IEnumerator WaitCooldown()

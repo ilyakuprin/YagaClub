@@ -32,12 +32,12 @@ namespace YagaClub
 
             for (int i = 0; i < _creatingOrder.GetSizeList; i++)
             {
-                CookingPoint item =
-                    _creatingOrder.GetActivityPoint(_creatingOrder.GetDishName(i));
+                int cookingObj =
+                    _creatingOrder.GetCookingObject(_creatingOrder.GetDishName(i));
 
                 for (int k = 0; k < _cookingPoints.Length; k++)
                 {
-                    if (item == _cookingPoints[k])
+                    if (cookingObj == _cookingPoints[k].GetIntCookingObj)
                     {
                         _startingAmountTime += _cookingPoints[k].GetCookingTimer.GetTimeActivations *
                                                _orderConfigs[k].ExtraTimeMultiplier;

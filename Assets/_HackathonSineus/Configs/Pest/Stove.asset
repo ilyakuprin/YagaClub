@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CookingObject>k__BackingField: 0
   <TimeActivation>k__BackingField: 2
-  <TimeOnePercentReductionQuality>k__BackingField: 2
+  <TimeOnePercentReductionQuality>k__BackingField: 0.2

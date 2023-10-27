@@ -22,13 +22,13 @@ namespace YagaClub
                 i.GetCookingTimer.TimerIsOver += Remove;
         }
 
-        private void Remove(ActivityPoint activityPoint)
+        private void Remove(int cookingObject)
         {
             for (int i = 0; i < _creatingOrder.GetSizeList; i++)
             {
                 string value = _creatingOrder.GetDishName(i);
 
-                if (_creatingOrder.GetActivityPoint(value) == activityPoint)
+                if (_creatingOrder.GetCookingObject(value) == cookingObject)
                 {
                     _creatingOrder.RemoveDishFromList(value);
                     RowDeleted?.Invoke();

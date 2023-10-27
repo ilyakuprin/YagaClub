@@ -14,8 +14,8 @@ namespace YagaClub
         private readonly string[][] _dishes;
         private readonly int _countPoints;
         private readonly CookingPoint[] _cookingPoints;
-        private readonly Dictionary<string, CookingPoint> _keyValuePairs =
-            new Dictionary<string, CookingPoint>();
+        private readonly Dictionary<string, int> _keyValuePairs =
+            new Dictionary<string, int>();
         private readonly ObjectForCoockingConfig[] _orderConfigs;
         private readonly AcceptanceOrder _acceptanceOrder;
 
@@ -58,7 +58,7 @@ namespace YagaClub
             DishRemoved?.Invoke(value);
         }
 
-        public CookingPoint GetActivityPoint(string value) => _keyValuePairs[value];
+        public int GetCookingObject(string value) => _keyValuePairs[value];
 
         public void OnCreatOrder()
         {
@@ -103,7 +103,7 @@ namespace YagaClub
         {
             for (int i = 0; i < _cookingPoints.Length; i++)
                 for (int k = 0; k < _dishes[i].Length; k++)
-                    _keyValuePairs.Add(_dishes[i][k], _cookingPoints[i]);
+                    _keyValuePairs.Add(_dishes[i][k], _cookingPoints[i].GetIntCookingObj);
         }
 
         public void Dispose() => _acceptanceOrder.OrderAccepted -= OnCreatOrder;

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using Zenject;
 
 namespace YagaClub
@@ -31,12 +32,11 @@ namespace YagaClub
         {
             for (int i = 0; i < _creatingOrder.GetSizeList; i++)
             {
-                CookingPoint currentPoint =
-                    _creatingOrder.GetActivityPoint(_creatingOrder.GetDishName(i));
+                int cookingObj = _creatingOrder.GetCookingObject(_creatingOrder.GetDishName(i));
 
                 for (int k = 0; k < _countPoint; k++)
                 {
-                    if (_cookingPoints[k] == currentPoint)
+                    if (_cookingPoints[k].GetIntCookingObj == cookingObj)
                     {
                         if (!_cookingPoints[k].IsColliderActive)
                             _cookingPoints[k].ActivateCollider();
@@ -45,20 +45,20 @@ namespace YagaClub
             }
         }
 
-        private void OnDeactiveTrigger(ActivityPoint activityPoint)
+        private void OnDeactiveTrigger(int cookingObject)
         {
             for (int i = 0; i < _countPoint; i++)
             {
-                if (_cookingPoints[i] == activityPoint)
+                if (_cookingPoints[i].GetIntCookingObj == cookingObject)
                 {
                     bool dishOnList = false;
 
                     for (int k = 0; k < _creatingOrder.GetSizeList; k++)
                     {
-                        CookingPoint currentPoint =
-                            _creatingOrder.GetActivityPoint(_creatingOrder.GetDishName(k));
+                        int cookingObjInOrder =
+                            _creatingOrder.GetCookingObject(_creatingOrder.GetDishName(k));
 
-                        if (_cookingPoints[i] == currentPoint)
+                        if (_cookingPoints[i].GetIntCookingObj == cookingObjInOrder)
                         {
                             dishOnList = true;
                             break;
