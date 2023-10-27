@@ -9,7 +9,7 @@ namespace YagaClub
         private readonly GiveOrderPoint _giveOrderPoint;
         private readonly ActivDeactivTriggers _activDeactivTriggers;
         private readonly CreatingOrder _creatingOrder;
-        private Collider2D _collider2D;
+        private Collider2D _collider;
 
         public TriggerHandlerGiveOrder(GiveOrderPoint giveOrderPoint,
                                        ActivDeactivTriggers activDeactivTriggers,
@@ -22,7 +22,8 @@ namespace YagaClub
 
         public void Initialize()
         {
-            _collider2D = _giveOrderPoint.GetComponent<Collider2D>();
+            _collider = _giveOrderPoint.GetComponent<Collider2D>();
+            _collider.enabled = false;
             _activDeactivTriggers.TriggerDeactivated += OnTryEnableTrigger;
             _giveOrderPoint.GetGiveOrderTimer.TimerIsOver += OnDisableTrigger;
         }
@@ -37,7 +38,7 @@ namespace YagaClub
             => SetEnabledCollider(false);
 
         private void SetEnabledCollider(bool value)
-            => _collider2D.enabled = value;
+            => _collider.enabled = value;
 
         public void Dispose()
             => _activDeactivTriggers.TriggerDeactivated -= OnTryEnableTrigger;

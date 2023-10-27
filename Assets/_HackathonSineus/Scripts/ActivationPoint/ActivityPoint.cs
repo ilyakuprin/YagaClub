@@ -10,13 +10,6 @@ namespace YagaClub
 
         protected void SetTimer(UpdateTimer timer) => _timer = timer;
 
-        private void Awake()
-        {
-            Collider2D collider = GetComponent<Collider2D>();
-            collider.isTrigger = true;
-            collider.enabled = false;
-        }
-
         public void FillProgress() => _timer.UpdateTime();
     }
 }

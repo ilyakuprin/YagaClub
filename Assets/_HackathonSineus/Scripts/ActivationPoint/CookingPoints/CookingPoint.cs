@@ -26,11 +26,7 @@ namespace YagaClub
             SetTimer(_timer);
         }
 
-        private void Awake()
-        {
-            _collider.isTrigger = true;
-            DeactivateCollider();
-        }
+        private void Awake() => DeactivateCollider();
 
         public void ActivateCollider() => _collider.enabled = true;
 

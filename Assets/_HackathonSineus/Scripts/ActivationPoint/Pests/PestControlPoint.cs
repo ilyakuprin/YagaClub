@@ -27,11 +27,7 @@ namespace YagaClub
             _timer.Set(config.TimeActivation);
         }
 
-        private void Awake()
-        {
-            _collider.isTrigger = true;
-            EnabledCollider(false);
-        }
+        private void Awake() => EnabledCollider(false);
 
         public void ActivateCollider()
         {

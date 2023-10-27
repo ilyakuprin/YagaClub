@@ -2794,6 +2794,8 @@ GameObject:
   - component: {fileID: 857583333}
   - component: {fileID: 857583334}
   - component: {fileID: 857583335}
+  - component: {fileID: 857583336}
+  - component: {fileID: 857583337}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2837,6 +2839,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e71a4c715bb41684590afbfcd83800cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &857583336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857583332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec83b1750b061648a212ca65d840c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &857583337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857583332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e63977089ef6144a3b8ca15cbce052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &873112602
@@ -6583,7 +6609,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7771,6 +7797,7 @@ Transform:
   - {fileID: 612366280}
   - {fileID: 1434272167}
   - {fileID: 1621445229}
+  - {fileID: 2129519387}
   m_Father: {fileID: 974696820}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8316,6 +8343,7 @@ GameObject:
   - component: {fileID: 2078816738}
   - component: {fileID: 2078816740}
   - component: {fileID: 2078816741}
+  - component: {fileID: 2078816742}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -8368,6 +8396,7 @@ MonoBehaviour:
   - {fileID: 2078816738}
   - {fileID: 2078816740}
   - {fileID: 2078816741}
+  - {fileID: 2078816742}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -8422,6 +8451,82 @@ MonoBehaviour:
   - {fileID: 733177305}
   - {fileID: 2001321694}
   - {fileID: 2000811369}
+--- !u!114 &2078816742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078816736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55942dd8deb3b14f8b5a41e4ab28d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fuelConfig: {fileID: 11400000, guid: 1f47ce1e7283eeb478de689492ed5f0a, type: 2}
+  _fuelHandler: {fileID: 857583336}
+  _gettingFuelPoint: {fileID: 2129519389}
+--- !u!1 &2129519386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129519387}
+  - component: {fileID: 2129519388}
+  - component: {fileID: 2129519389}
+  m_Layer: 0
+  m_Name: GettingFuel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2129519387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129519386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.85, y: -12.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1920029564}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2129519388
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129519386}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.8
+--- !u!114 &2129519389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129519386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea796ce0af27d2429636bda07bf63c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 2129519388}
 --- !u!1 &2134750474
 GameObject:
   m_ObjectHideFlags: 0

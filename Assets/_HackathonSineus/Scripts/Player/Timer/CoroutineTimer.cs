@@ -15,6 +15,8 @@ namespace YagaClub
 
         private readonly MonoBehaviour _monoBeh;
 
+        public float GetRemainigTime { get => _remainigTime; }
+
         public CoroutineTimer(MonoBehaviour monoBeh)
             => _monoBeh = monoBeh;
 
