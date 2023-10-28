@@ -1,28 +1,17 @@
 using System;
-using Zenject;
 
 namespace YagaClub
 {
-    public class RemovingFromList : IInitializable, IDisposable
+    public class RemovingFromList
     {
         public event Action RowDeleted;
 
         private readonly CreatingOrder _creatingOrder;
-        private readonly CookingPoint[] _cookingPoint;
 
-        public RemovingFromList(CreatingOrder creatingOrder, CookingPoint[] cookingPoint)
-        {
-            _creatingOrder = creatingOrder;
-            _cookingPoint = cookingPoint;
-        }
+        public RemovingFromList(CreatingOrder creatingOrder)
+            => _creatingOrder = creatingOrder;
 
-        public void Initialize()
-        {
-            foreach (var i in _cookingPoint)
-                i.GetCookingTimer.TimerIsOver += Remove;
-        }
-
-        private void Remove(int cookingObject)
+        public void Remove(int cookingObject)
         {
             for (int i = 0; i < _creatingOrder.GetSizeList; i++)
             {
@@ -35,12 +24,6 @@ namespace YagaClub
                     break;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            foreach (var i in _cookingPoint)
-                i.GetCookingTimer.TimerIsOver += Remove;
         }
     }
 }

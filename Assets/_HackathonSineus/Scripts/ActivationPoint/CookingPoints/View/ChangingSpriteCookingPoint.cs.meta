@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a863b943ebf86ec4a8bf0e6f53eaeb86
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _spriteRenderer: {instanceID: 0}
+  - _cookingPoint: {instanceID: 0}
+  - _active: {fileID: 3179918874408444727, guid: ee9dd3092ff8f744983fe8ff54f95280, type: 3}
+  - _inactive: {fileID: 2640624771228170184, guid: ee9dd3092ff8f744983fe8ff54f95280, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

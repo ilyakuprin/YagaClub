@@ -71,7 +71,7 @@ namespace YagaClub
                     if (_pestPoints[i].GetIntCookingObj == cookingObject)
                     {
                         _pestPoints[i].ActivateCollider();
-                        _cookingPoints[i].DeactivateCollider();
+                        _cookingPoints[i].EnableCollider(false);
                         _indexCorrespondingCooking = i;
                         break;
                     }
@@ -81,7 +81,7 @@ namespace YagaClub
 
         private void PestDeactivation()
         {
-            _cookingPoints[_indexCorrespondingCooking].ActivateCollider();
+            _cookingPoints[_indexCorrespondingCooking].EnableCollider(true);
             UnlockTimerStart();
             OnStartPestSpawnTimer();
         }

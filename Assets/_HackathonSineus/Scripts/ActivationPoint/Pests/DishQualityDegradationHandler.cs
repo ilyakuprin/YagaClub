@@ -53,7 +53,7 @@ namespace YagaClub
             }
         }
 
-        private void ResetCounter(int _) => _counter = 0;
+        private void ResetCounter() => _counter = 0;
 
         private void OnEnable()
         {

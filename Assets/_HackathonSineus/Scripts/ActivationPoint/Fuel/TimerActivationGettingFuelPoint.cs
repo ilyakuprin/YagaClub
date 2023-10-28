@@ -24,11 +24,6 @@ namespace YagaClub
 
         private void StartTimer() => _timer.StartCountingTime();
 
-        private void Update()
-        {
-            //Debug.Log("Времени до поялвения канситры: " + Mathf.RoundToInt(_timer.GetRemainigTime));
-        }
-
         private void OnEnable()
         {
             _gettingFuelPoint.GetNoCooldownTimer.TimerIsOver += StartTimer;
