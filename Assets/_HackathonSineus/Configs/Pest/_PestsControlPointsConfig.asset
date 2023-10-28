@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a400eaaafbcd11a40923af197780bb00, type: 2}
   - {fileID: 11400000, guid: cfd8f06c34baa824a8570335de06d2c5, type: 2}
   - {fileID: 11400000, guid: 629c4ad3c15548a4ba464c02fc0a0eda, type: 2}
-  <MinTimeSpawn>k__BackingField: 5
-  <MaxTimeSpawn>k__BackingField: 7
+  <MinTimeSpawn>k__BackingField: 50
+  <MaxTimeSpawn>k__BackingField: 50

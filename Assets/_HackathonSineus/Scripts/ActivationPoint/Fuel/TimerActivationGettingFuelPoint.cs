@@ -26,7 +26,7 @@ namespace YagaClub
 
         private void Update()
         {
-            Debug.Log("Времени до поялвения канситры: " + Mathf.RoundToInt(_timer.GetRemainigTime));
+            //Debug.Log("Времени до поялвения канситры: " + Mathf.RoundToInt(_timer.GetRemainigTime));
         }
 
         private void OnEnable()

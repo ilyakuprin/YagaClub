@@ -40,7 +40,6 @@ namespace YagaClub
 
             for (int i = 0; i < _countPoints; i++)
                 _dishes[i] = _orderConfigs[i].GetCopyDishes();
-
             FillDictionary();
         }
 

@@ -41,7 +41,6 @@ namespace YagaClub
                     {
                         _startingAmountTime += _cookingPoints[k].GetCookingTimer.GetTimeActivations *
                                                _orderConfigs[k].ExtraTimeMultiplier;
-
                         break;
                     }
                 }

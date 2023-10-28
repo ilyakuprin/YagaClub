@@ -17,8 +17,8 @@ MonoBehaviour:
   - "- \u041A\u043E\u0444\u04351"
   - "- \u041A\u043E\u0444\u04352"
   <TimeActivation>k__BackingField: 2
-  <Cooldown>k__BackingField: 2
+  <Cooldown>k__BackingField: 0
   <MaxNumberItemsPerOrder>k__BackingField: 5
   <Cost>k__BackingField: 50
   <CostReductionMultiplier>k__BackingField: 0.5
-  <ExtraTimeMultiplier>k__BackingField: 2
+  <ExtraTimeMultiplier>k__BackingField: 6.24

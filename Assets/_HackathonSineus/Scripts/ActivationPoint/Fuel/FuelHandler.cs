@@ -36,7 +36,7 @@ namespace YagaClub
 
         private void Update()
         {
-            Debug.Log("Текущее топливо: " + Mathf.RoundToInt(_timer.GetRemainigTime));
+            //Debug.Log("Текущее топливо: " + Mathf.RoundToInt(_timer.GetRemainigTime));
         }
 
         private void OnGameOver() => Debug.Log("Топливо закончилось");

@@ -18,7 +18,7 @@ namespace YagaClub
 
         private void OnEnable() => _button.onClick.AddListener(OnInvokeOrderAccepted);
 
-        private void OnDisable() => _button.onClick.AddListener(OnInvokeOrderAccepted);
+        private void OnDisable() => _button.onClick.RemoveListener(OnInvokeOrderAccepted);
 
         private void OnValidate() => _button ??= GetComponent<Button>();
     }
