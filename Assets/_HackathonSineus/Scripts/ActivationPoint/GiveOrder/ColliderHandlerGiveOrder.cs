@@ -4,14 +4,16 @@ using Zenject;
 
 namespace YagaClub
 {
-    public class TriggerHandlerGiveOrder : IInitializable, IDisposable
+    public class ColliderHandlerGiveOrder : IInitializable, IDisposable
     {
+        public event Action<bool> ColliderActivated;
+
         private readonly GiveOrderPoint _giveOrderPoint;
-        private readonly ActivDeactivTriggers _activDeactivTriggers;
+        private readonly ActivateCollider _activDeactivTriggers;
         private Collider2D _collider;
 
-        public TriggerHandlerGiveOrder(GiveOrderPoint giveOrderPoint,
-                                       ActivDeactivTriggers activDeactivTriggers)
+        public ColliderHandlerGiveOrder(GiveOrderPoint giveOrderPoint,
+                                        ActivateCollider activDeactivTriggers)
         {
             _giveOrderPoint = giveOrderPoint;
             _activDeactivTriggers = activDeactivTriggers;
@@ -32,7 +34,10 @@ namespace YagaClub
             => SetEnabledCollider(false);
 
         private void SetEnabledCollider(bool value)
-            => _collider.enabled = value;
+        {
+            _collider.enabled = value;
+            ColliderActivated?.Invoke(value);
+        }
 
         public void Dispose()
             => _activDeactivTriggers.ListOver -= OnEnableCollider;

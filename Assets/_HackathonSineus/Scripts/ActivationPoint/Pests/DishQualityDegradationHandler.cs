@@ -37,9 +37,13 @@ namespace YagaClub
                     _cookingPoint = i;
         }
 
-        private void StartTimer() => _timer.StartCountingTime();
-
-        private void StopTimer() => _timer.StopCountingTime();
+        private void StartTimer(bool value)
+        {
+            if (value)
+                _timer.StartCountingTime();
+            else
+                _timer.StopCountingTime();
+        }
 
         private void AddCounter()
         {
@@ -49,7 +53,7 @@ namespace YagaClub
             {
                 _rewardCompletingOrder.OnReduceReward(_pestControlPoint.GetIntCookingObj);
                 CounterAdded?.Invoke();
-                StartTimer();
+                StartTimer(true);
             }
         }
 
@@ -58,7 +62,6 @@ namespace YagaClub
         private void OnEnable()
         {
             _pestControlPoint.ColliderActivated += StartTimer;
-            _pestControlPoint.ColliderDeactivated += StopTimer;
             _timer.TimerIsOver += AddCounter;
             _cookingPoint.GetCookingTimer.TimerIsOver += ResetCounter;
         }
@@ -66,7 +69,6 @@ namespace YagaClub
         private void OnDisable()
         {
             _pestControlPoint.ColliderActivated -= StartTimer;
-            _pestControlPoint.ColliderDeactivated -= StopTimer;
             _timer.TimerIsOver -= AddCounter;
             _cookingPoint.GetCookingTimer.TimerIsOver -= ResetCounter;
         }

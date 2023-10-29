@@ -66,13 +66,16 @@ namespace YagaClub
                 string dish = _creatingOrder.GetDishName(index);
                 int cookingObject = _creatingOrder.GetCookingObject(dish);
 
-                for (int i = 0; i < _pestPoints.Length; i++)
+                int countPoints = _pestPoints.Length;
+
+                for (int i = 0; i < countPoints; i++)
                 {
                     if (_pestPoints[i].GetIntCookingObj == cookingObject)
                     {
-                        _pestPoints[i].ActivateCollider();
+                        _pestPoints[i].ActivateCollider(true);
                         _cookingPoints[i].EnableCollider(false);
                         _indexCorrespondingCooking = i;
+
                         break;
                     }
                 }

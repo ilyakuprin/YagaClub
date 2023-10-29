@@ -33,12 +33,12 @@ namespace YagaClub
             Container.BindInterfacesAndSelfTo<CreatingOrder>().AsSingle();
 
             Container.BindInterfacesAndSelfTo<RemovingFromList>().AsSingle();
-            Container.BindInterfacesAndSelfTo<ActivDeactivTriggers>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ActivateCollider>().AsSingle();
             Container.BindInterfacesAndSelfTo<RewardCompletingOrder>().AsSingle();
             Container.BindInterfacesAndSelfTo<CalculationTimeOrder>().AsSingle();
             Container.BindInterfacesAndSelfTo<OrderController>().AsSingle();
 
-            Container.BindInterfacesAndSelfTo<TriggerHandlerGiveOrder>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ColliderHandlerGiveOrder>().AsSingle();
             Container.BindInterfacesAndSelfTo<CoinHandler>().AsSingle();
         }
 

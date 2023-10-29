@@ -6,8 +6,8 @@ MonoImporter:
   defaultReferences:
   - _spriteRenderer: {instanceID: 0}
   - _cookingPoint: {instanceID: 0}
-  - _active: {fileID: 3179918874408444727, guid: ee9dd3092ff8f744983fe8ff54f95280, type: 3}
-  - _inactive: {fileID: 2640624771228170184, guid: ee9dd3092ff8f744983fe8ff54f95280, type: 3}
+  - _active: {instanceID: 0}
+  - _inactive: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

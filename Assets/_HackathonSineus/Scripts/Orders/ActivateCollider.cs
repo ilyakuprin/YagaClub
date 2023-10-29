@@ -3,19 +3,22 @@ using Zenject;
 
 namespace YagaClub
 {
-    public class ActivDeactivTriggers : IInitializable, IDisposable
+    public class ActivateCollider : IInitializable, IDisposable
     {
         public event Action ListOver;
 
         private readonly CreatingOrder _creatingOrder;
         private readonly CookingPoint[] _cookingPoints;
+        private readonly PestControlPoint[] _pestControlPoint;
         private readonly int _countPoint;
 
-        public ActivDeactivTriggers(CreatingOrder creatingOrder,
-                                    CookingPoint[] cookingPoints)
+        public ActivateCollider(CreatingOrder creatingOrder,
+                                CookingPoint[] cookingPoints,
+                                PestControlPoint[] pestControlPoint)
         {
             _creatingOrder = creatingOrder;
             _cookingPoints = cookingPoints;
+            _pestControlPoint = pestControlPoint;
             _countPoint = cookingPoints.Length;
         }
 
@@ -24,7 +27,7 @@ namespace YagaClub
             for (int i = 0; i < _countPoint; i++)
             {
                 _cookingPoints[i].GetCookingTimer.TimerIsOver += OnTryActivateGiveOrder;
-                _cookingPoints[i].GetCookingTimer.CooldownOver += OnTryActivateTrigger;
+                _cookingPoints[i].GetCookingTimer.CooldownOver += OnTryActivateCollider;
             }
 
             _creatingOrder.OrderCreated += OnCheckAndActivate;
@@ -47,7 +50,7 @@ namespace YagaClub
             }
         }
 
-        private void OnTryActivateTrigger(int cookingObject)
+        private void OnTryActivateCollider(int cookingObject)
         {
             for (int i = 0; i < _countPoint; i++)
             {
@@ -58,7 +61,8 @@ namespace YagaClub
                         int cookingObjInOrder =
                             _creatingOrder.GetCookingObject(_creatingOrder.GetDishName(k));
 
-                        if (_cookingPoints[i].GetIntCookingObj == cookingObjInOrder)
+                        if (_cookingPoints[i].GetIntCookingObj == cookingObjInOrder &&
+                            !_pestControlPoint[i].GetEnabledCollider)
                         {
                             _cookingPoints[i].EnableCollider(true);
                             break;
@@ -83,7 +87,7 @@ namespace YagaClub
             foreach (var i in _cookingPoints)
             {
                 i.GetCookingTimer.TimerIsOver -= OnTryActivateGiveOrder;
-                i.GetCookingTimer.CooldownOver -= OnTryActivateTrigger;
+                i.GetCookingTimer.CooldownOver -= OnTryActivateCollider;
             }
         }
     }

@@ -15,9 +15,7 @@ namespace YagaClub
         private RemovingFromList _removingFromList;
 
         public UpdateTimerCooking GetCookingTimer { get => _timer; }
-
         public int GetIntCookingObj { get => (int) _cookingObject; }
-
         public bool IsColliderActive { get => _collider.enabled; }
 
         [Inject]
