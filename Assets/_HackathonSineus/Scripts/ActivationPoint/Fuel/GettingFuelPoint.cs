@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -6,6 +7,8 @@ namespace YagaClub
     [RequireComponent(typeof(Collider2D))]
     public class GettingFuelPoint : ActivityPoint
     {
+        public event Action<bool> TookFuel;
+
         [SerializeField] private Collider2D _collider;
         private FuelHandler _fuelHandler;
         private float _extraFuelTime;
@@ -23,9 +26,13 @@ namespace YagaClub
             _extraFuelTime = fuelConfig.ExtraFuelTime;
         }
 
-        private void Awake() => EnabledCollider(false);
+        private void Awake() => _collider.enabled = false;
 
-        private void EnabledCollider(bool value) => _collider.enabled = value;
+        private void EnabledCollider(bool value)
+        {
+            _collider.enabled = value;
+            TookFuel?.Invoke(value);
+        }
 
         private void OnAddFuel() => _fuelHandler.AddTime(_extraFuelTime);
 

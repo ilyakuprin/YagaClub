@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FuelConfig
   m_EditorClassIdentifier: 
   <TimeActivation>k__BackingField: 2
-  <TotalFuelConsumptionTime>k__BackingField: 200
-  <ExtraFuelTime>k__BackingField: 50
-  <TimeIntervalReceivingFuel>k__BackingField: 10
+  <TotalFuelConsumptionTime>k__BackingField: 50
+  <ExtraFuelTime>k__BackingField: 25
+  <TimeIntervalReceivingFuel>k__BackingField: 5

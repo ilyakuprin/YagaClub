@@ -4,7 +4,7 @@ using Zenject;
 namespace YagaClub
 {
     [RequireComponent(typeof(AudioSource))]
-    public class SoundActivityPoint : MonoBehaviour
+    public class SoundUpdateActivityPoint : MonoBehaviour
     {
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private ActivityPoint _activityPoint;

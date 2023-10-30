@@ -8,6 +8,9 @@ namespace YagaClub
         private float _totalFuelConsumptionTime;
         private CoroutineTimer _timer;
 
+        public CoroutineTimer GetTimer { get => _timer; }
+        public float GetTotalValue { get => _totalFuelConsumptionTime; }
+
         [Inject]
         private void Construct(FuelConfig fuelConfig)
         {
