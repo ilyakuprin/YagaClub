@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/_HackathonSineus/Scenes/MainMenu.unity
     guid: ccc3a99da1b5fb24caef5946062f530b
   - enabled: 1
-    path: Assets/_HackathonSineus/Scenes/ComicScene.unity
+    path: Assets/_HackathonSineus/Scenes/Comic.unity
     guid: 6bb589e4389e142498a8ad615db8f655
   - enabled: 1
     path: Assets/_HackathonSineus/Scenes/Game.unity

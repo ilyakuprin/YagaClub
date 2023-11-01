@@ -156,7 +156,7 @@ RectTransform:
   - {fileID: 873112603}
   - {fileID: 1146724061}
   m_Father: {fileID: 959455261}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -347,11 +347,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85786506}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0064511, y: -9.206736, z: 667.71313}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 469764736}
   m_Father: {fileID: 1199440297}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &85786508
 MonoBehaviour:
@@ -365,8 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b6835b7721c6b4189b8d0470c841da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondSprite: {fileID: 469764735}
-  Speed: 12
+  _speed: 15
 --- !u!212 &85786509
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1198,8 +1198,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HackathonSineus.GameMenu, Assembly-CSharp
+      - m_Target: {fileID: 1930066228}
+        m_TargetAssemblyTypeName: YagaClub.GameMenu, Assembly-CSharp
         m_MethodName: OnUnmute
         m_Mode: 1
         m_Arguments:
@@ -1208,7 +1208,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &189984706
 MonoBehaviour:
@@ -1921,11 +1921,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428596277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.35773, y: -9.206736, z: 667.71313}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 32.672836, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1199440297}
-  m_RootOrder: 6
+  m_Father: {fileID: 1971668946}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &428596279
 SpriteRenderer:
@@ -2009,7 +2009,7 @@ RectTransform:
   m_Children:
   - {fileID: 1964848803}
   m_Father: {fileID: 959455261}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2167,7 +2167,7 @@ GameObject:
   - component: {fileID: 469764736}
   - component: {fileID: 469764737}
   m_Layer: 0
-  m_Name: forest_02 (2)
+  m_Name: forest_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2181,11 +2181,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469764735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.35773, y: -9.206736, z: 667.71313}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 32.672836, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1199440297}
-  m_RootOrder: 4
+  m_Father: {fileID: 85786507}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &469764737
 SpriteRenderer:
@@ -3386,11 +3386,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708298871}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.35773, y: -9.206736, z: 667.71313}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 32.672836, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1199440297}
-  m_RootOrder: 2
+  m_Father: {fileID: 1456812574}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &708298873
 SpriteRenderer:
@@ -3649,7 +3649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -620, y: 33}
+  m_AnchoredPosition: {x: -620, y: 40}
   m_SizeDelta: {x: 437.31, y: 96.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764061190
@@ -3696,8 +3696,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HackathonSineus.GameMenu, Assembly-CSharp
+      - m_Target: {fileID: 1930066228}
+        m_TargetAssemblyTypeName: YagaClub.GameMenu, Assembly-CSharp
         m_MethodName: OnResume
         m_Mode: 1
         m_Arguments:
@@ -4744,8 +4744,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HackathonSineus.GameMenu, Assembly-CSharp
+      - m_Target: {fileID: 1930066228}
+        m_TargetAssemblyTypeName: YagaClub.GameMenu, Assembly-CSharp
         m_MethodName: OnExit
         m_Mode: 1
         m_Arguments:
@@ -5286,7 +5286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927034950}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.072548866, y: -6.9067354, z: 667.71313}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 1199440297}
@@ -5640,8 +5640,8 @@ RectTransform:
   - {fileID: 1011353251}
   - {fileID: 288622898}
   - {fileID: 523498758}
-  - {fileID: 18218347}
   - {fileID: 432909418}
+  - {fileID: 18218347}
   m_Father: {fileID: 963326627}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6696,7 +6696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1199440297}
-  - component: {fileID: 1199440298}
+  - component: {fileID: 1199440299}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -6712,22 +6712,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199440296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.0064511, y: 9.206736, z: -667.71313}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 927034951}
   - {fileID: 1456812574}
-  - {fileID: 708298872}
   - {fileID: 85786507}
-  - {fileID: 469764736}
   - {fileID: 1971668946}
-  - {fileID: 428596278}
   - {fileID: 1757237150}
-  - {fileID: 1625258311}
   m_Father: {fileID: 1657916249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1199440298
+--- !u!114 &1199440299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6736,16 +6732,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1199440296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6341772919f40dd4faf1ee102c91786d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3876628d393bcf845a8215dd874292ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 30
-  AccelerationTime: 6
-  ParallaxCoef: 0.5
-  _foreground: {fileID: 1757237151}
-  _layer1: {fileID: 1456812575}
-  _layer2: {fileID: 85786508}
-  _layer3: {fileID: 1971668947}
+  _moving:
+  - {fileID: 1456812575}
+  - {fileID: 85786508}
+  - {fileID: 1971668947}
+  - {fileID: 1757237151}
+  _maxTimeAcceleration: 7
 --- !u!1 &1206075200
 GameObject:
   m_ObjectHideFlags: 0
@@ -8293,9 +8288,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456812573}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0064511, y: -9.206736, z: 667.71313}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 708298872}
   m_Father: {fileID: 1199440297}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8311,8 +8307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b6835b7721c6b4189b8d0470c841da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondSprite: {fileID: 708298871}
-  Speed: 25
+  _speed: 20
 --- !u!212 &1456812576
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9526,8 +9521,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HackathonSineus.GameMenu, Assembly-CSharp
+      - m_Target: {fileID: 1930066228}
+        m_TargetAssemblyTypeName: YagaClub.GameMenu, Assembly-CSharp
         m_MethodName: OnMute
         m_Mode: 1
         m_Arguments:
@@ -9873,11 +9868,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625258310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.35773, y: -9.206736, z: 667.71313}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 32.672836, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1199440297}
-  m_RootOrder: 8
+  m_Father: {fileID: 1757237150}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1625258312
 SpriteRenderer:
@@ -10492,11 +10487,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757237149}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0064511, y: -9.206736, z: 667.71313}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 1625258311}
   m_Father: {fileID: 1199440297}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1757237151
 MonoBehaviour:
@@ -10510,8 +10506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b6835b7721c6b4189b8d0470c841da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondSprite: {fileID: 1625258310}
-  Speed: 50
+  _speed: 25
 --- !u!212 &1757237152
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11139,7 +11134,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930066226}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c577df503ef9404388e7c8e2ec63072, type: 3}
   m_Name: 
@@ -11324,11 +11319,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971668945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0064511, y: -9.206736, z: 667.71313}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 428596278}
   m_Father: {fileID: 1199440297}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1971668947
 MonoBehaviour:
@@ -11342,8 +11338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b6835b7721c6b4189b8d0470c841da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondSprite: {fileID: 428596277}
-  Speed: 7
+  _speed: 10
 --- !u!212 &1971668948
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11715,6 +11710,7 @@ GameObject:
   - component: {fileID: 2078816740}
   - component: {fileID: 2078816741}
   - component: {fileID: 2078816742}
+  - component: {fileID: 2078816743}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -11768,6 +11764,7 @@ MonoBehaviour:
   - {fileID: 2078816740}
   - {fileID: 2078816741}
   - {fileID: 2078816742}
+  - {fileID: 2078816743}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -11837,6 +11834,20 @@ MonoBehaviour:
   _fuelConfig: {fileID: 11400000, guid: 1f47ce1e7283eeb478de689492ed5f0a, type: 2}
   _fuelHandler: {fileID: 857583336}
   _gettingFuelPoint: {fileID: 2129519389}
+--- !u!114 &2078816743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078816736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250fb2cecce0ad14b85a7537bc29caa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1358862763}
+  _spriteRenderer: {fileID: 1358862754}
 --- !u!1 &2129519386
 GameObject:
   m_ObjectHideFlags: 0

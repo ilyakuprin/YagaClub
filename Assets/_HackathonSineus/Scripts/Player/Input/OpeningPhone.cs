@@ -5,15 +5,15 @@ namespace YagaClub
 {
     public class OpeningPhone : IPlayerAction, IDisposable, IInitializable
     {
-        public delegate void PressPhone(bool isOpen);
-        public event PressPhone PressedPhone;
+        public event Action<bool> PressedPhone;
 
         private readonly PlayerInput _playerInput;
         private readonly ISubscribeUnsubscribe[] _switchableComponents;
 
         private bool _phoneOpen = false;
 
-        public OpeningPhone(PlayerInput playerInput, ISubscribeUnsubscribe[] switchableComponents)
+        public OpeningPhone(PlayerInput playerInput,
+                            ISubscribeUnsubscribe[] switchableComponents)
         {
             _playerInput = playerInput;
             _switchableComponents = switchableComponents;
@@ -53,6 +53,7 @@ namespace YagaClub
             foreach (var i in _switchableComponents)
                 i.Initialize();
 
+            //It is necessary that the subscription to Phone Opening is at the end.
             Dispose();
             Initialize();
 

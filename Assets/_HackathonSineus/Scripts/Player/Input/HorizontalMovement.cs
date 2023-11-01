@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -5,16 +6,16 @@ namespace YagaClub
 {
     public class HorizontalMovement : IPlayerAction, ISubscribeUnsubscribe, IFixedTickable
     {
-        public delegate void ToMove(float direction);
-        public event ToMove Moved;
+        public event Action<float> Moved;
         
         private readonly PlayerInput _playerInput;
         private readonly Rigidbody2D _rigidbody;
         private readonly float _speed;
-
         private float _horizontalForce;
 
-        public HorizontalMovement(PlayerInput playerInput, Rigidbody2D rigidbody, PlayerConfig playerConfig)
+        public HorizontalMovement(PlayerInput playerInput,
+                                  Rigidbody2D rigidbody,
+                                  PlayerConfig playerConfig)
         {
             _playerInput = playerInput;
             _rigidbody = rigidbody;
@@ -36,15 +37,22 @@ namespace YagaClub
                 _horizontalForce = 0;
             }
 
-            Moved?.Invoke(inputHorizontalDirection);
+            Moved?.Invoke(_horizontalForce);
         }
 
-        public void FixedTick() => _rigidbody.velocity = new Vector2(_horizontalForce, _rigidbody.velocity.y);
+        public void FixedTick()
+            => _rigidbody.velocity = new Vector2(_horizontalForce, _rigidbody.velocity.y);
 
         public void Dispose()
         {
             _playerInput.Inputted -= Executive;
+            Stay();
+        }
+
+        private void Stay()
+        {
             _horizontalForce = 0;
+            Moved?.Invoke(_horizontalForce);
         }
     }
 }

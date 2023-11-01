@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -5,8 +6,7 @@ namespace YagaClub
 {
     public class PlayerInput : ITickable
     {
-        public delegate void EnterData(InputData inputData);
-        public event EnterData Inputted;
+        public event Action<InputData> Inputted;
 
         private InputData _inputData = new InputData();
 

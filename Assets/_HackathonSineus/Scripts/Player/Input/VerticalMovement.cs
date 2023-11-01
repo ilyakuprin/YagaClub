@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -5,8 +6,7 @@ namespace YagaClub
 {
     public class VerticalMovement : IPlayerAction, ISubscribeUnsubscribe, IFixedTickable
     {
-        public delegate void ToMove();
-        public event ToMove Moved;
+        public event Action Moved;
 
         private readonly PlayerInput _playerInput;
         private readonly Rigidbody2D _rigidbody;
@@ -22,6 +22,8 @@ namespace YagaClub
             _rigidbody = rigidbody;
             _speed = playerConfig.VerticalSpeed;
         }
+
+        public bool IsLadder { get => _isLadder; }
 
         [Inject]
         private void RememberGravity() => _gravityScale = _rigidbody.gravityScale;
