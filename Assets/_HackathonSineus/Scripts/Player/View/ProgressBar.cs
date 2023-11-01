@@ -9,11 +9,16 @@ namespace YagaClub
         [SerializeField] private GameObject ProgressBarCanvas;
         [SerializeField] private Image _progressBar;
         private InteractionWithActivationPoint _interactionWithAP;
+        private OpeningPhone _openingPhone;
         private bool _isCanvasActiv = false;
 
         [Inject]
-        private void Constructor(InteractionWithActivationPoint interactionWithAP)
-            => _interactionWithAP = interactionWithAP;
+        private void Constructor(InteractionWithActivationPoint interactionWithAP,
+                                 OpeningPhone openingPhone)
+        {
+            _interactionWithAP = interactionWithAP;
+            _openingPhone = openingPhone;
+        }
 
         private void Awake() => SetActiveCanvas(false);
 
@@ -48,8 +53,22 @@ namespace YagaClub
             _isCanvasActiv = value;
         }
 
-        private void OnEnable() => _interactionWithAP.Pressed += OnPassValue;
+        private void OnDisableCanvasWithOpenPhone(bool value)
+        {
+            if (value)
+                OnPassValue(false);
+        }
 
-        private void OnDisable() => _interactionWithAP.Pressed -= OnPassValue;
+        private void OnEnable()
+        {
+            _interactionWithAP.Pressed += OnPassValue;
+            _openingPhone.PressedPhone += OnDisableCanvasWithOpenPhone;
+        }
+
+        private void OnDisable()
+        {
+            _interactionWithAP.Pressed -= OnPassValue;
+            _openingPhone.PressedPhone -= OnDisableCanvasWithOpenPhone;
+        }
     }
 }

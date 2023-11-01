@@ -7272,6 +7272,7 @@ GameObject:
   - component: {fileID: 1358862759}
   - component: {fileID: 1358862758}
   - component: {fileID: 1358862760}
+  - component: {fileID: 1358862761}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7420,6 +7421,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressBarCanvas: {fileID: 85901791}
   _progressBar: {fileID: 898189554}
+--- !u!114 &1358862761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358862753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5df761af7b7b4a4bb92e514d4a7513d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1358862766}
 --- !u!95 &1358862763
 Animator:
   serializedVersion: 3
