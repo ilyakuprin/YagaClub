@@ -7,13 +7,13 @@ namespace YagaClub
     {
         public event Action<float> HasBeenUpdated;
 
-        private float _time;
+        private float _time = 1;
         private float _remainigTime;
 
         public float GetTimeActivations { get => _time; }
         public float GetRemainigTime { get => _remainigTime; }
 
-        protected void SetTime(float time = 1) => _time = time;
+        public void SetTime(float time = 1) => _time = time;
 
         protected void ResetCounter() => _remainigTime = 0;
 

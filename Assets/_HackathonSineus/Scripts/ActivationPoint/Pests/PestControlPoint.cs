@@ -24,7 +24,7 @@ namespace YagaClub
             PestControlPointConfig config = pestsControlPointsConfig.GetObject(_cookingObject);
 
             SetTimer(_timer);
-            _timer.Set(config.TimeActivation);
+            //_timer.Set(config.TimeActivation);
         }
 
         private void Awake() => EnabledCollider(false);

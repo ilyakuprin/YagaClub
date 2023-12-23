@@ -25,7 +25,8 @@ namespace YagaClub
             ObjectForCoockingConfig currentConf = config.GetObject(_cookingObject);
 
             _timer = new UpdateTimerCooking(this);
-            _timer.Set(currentConf.TimeActivation, currentConf.Cooldown);
+            //_timer.Set(currentConf.TimeActivation, currentConf.Cooldown);
+            _timer.SetCooldown(currentConf.Cooldown);
             SetTimer(_timer);
 
             _removingFromList = removingFromList;

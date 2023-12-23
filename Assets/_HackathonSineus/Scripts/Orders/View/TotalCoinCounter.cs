@@ -1,25 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using YG;
 
 namespace YagaClub
 {
     public class TotalCoinCounter : MonoBehaviour
     {
         [SerializeField] private Text _totalCoin;
-        private CoinHandler _coinHandler;
+        private Saving _saving;
 
         [Inject]
-        private void Constructor(CoinHandler coinHandler)
-            => _coinHandler = coinHandler;
+        private void Constructor(Saving saving)
+            => _saving = saving;
 
-        private void OnAddCoin()
-            => _totalCoin.text = _coinHandler.GetCountCoin.ToString();
+        private void OnChangeCoin()
+            => _totalCoin.text = YandexGame.savesData.Money.ToString();
 
         private void OnEnable()
-            => _coinHandler.RewardAdded += OnAddCoin;
+            => _saving.SaveDataReceived += OnChangeCoin;
 
         private void OnDisable()
-            => _coinHandler.RewardAdded -= OnAddCoin;
+            => _saving.SaveDataReceived -= OnChangeCoin;
     }
 }

@@ -11,20 +11,35 @@ namespace YagaClub
         public CoroutineTimer GetTimer { get => _timer; }
         public float GetTotalValue { get => _totalFuelConsumptionTime; }
 
+        private readonly float _minValue = 1;
+
         [Inject]
         private void Construct(FuelConfig fuelConfig)
         {
             _timer = new CoroutineTimer(this);
 
             _totalFuelConsumptionTime = fuelConfig.TotalFuelConsumptionTime;
-            SetTimer(_totalFuelConsumptionTime);
         }
 
-        private void Start() => StartTimer();
+        private void Awake()
+        {
+            SetTime(_totalFuelConsumptionTime);
+        }
 
-        private void SetTimer(float value) => _timer.Set(value);
+        public void AddTotalFuel(float value)
+        {
+            if (value > 0)
+                _totalFuelConsumptionTime += value;
+        }
 
-        private void StartTimer() => _timer.StartCountingTime();
+        private void SetTime(float value)
+        {
+            if (value < _minValue)
+                value = _minValue;
+
+            _timer.Set(value);
+            _timer.StartCountingTime();
+        }
 
         public void AddTime(float time)
         {
@@ -33,8 +48,7 @@ namespace YagaClub
             if (sumTime > _totalFuelConsumptionTime)
                 sumTime = _totalFuelConsumptionTime;
 
-            SetTimer(sumTime);
-            StartTimer();
+            SetTime(sumTime);
         }
 
         private void OnGameOver() => Debug.Log("Топливо закончилось");

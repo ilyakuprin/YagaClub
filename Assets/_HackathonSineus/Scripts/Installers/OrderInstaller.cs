@@ -39,7 +39,7 @@ namespace YagaClub
             Container.BindInterfacesAndSelfTo<OrderController>().AsSingle();
 
             Container.BindInterfacesAndSelfTo<ColliderHandlerGiveOrder>().AsSingle();
-            Container.BindInterfacesAndSelfTo<CoinHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AccrualReward>().AsSingle();
         }
 
         private void SortCookingPoints()

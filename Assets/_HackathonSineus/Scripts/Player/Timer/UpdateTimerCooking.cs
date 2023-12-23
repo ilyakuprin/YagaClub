@@ -15,16 +15,14 @@ namespace YagaClub
         public UpdateTimerCooking(CookingPoint cookingPoint)
             => _cookingPoint = cookingPoint;
 
-        public void Set(float time, float cooldown)
+        public void SetCooldown(float cooldown)
         {
-            if (time > 0 && cooldown >= 0)
+            if (cooldown > 0)
             {
-                SetTime(time);
                 _cooldown = cooldown;
             }
             else
             {
-                SetTime();
                 _cooldown = 0;
             }
         }
