@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -5,6 +6,8 @@ namespace YagaClub
 {
     public class FuelHandler : MonoBehaviour
     {
+        public event Action GameOver;
+
         private float _totalFuelConsumptionTime;
         private CoroutineTimer _timer;
 
@@ -51,10 +54,13 @@ namespace YagaClub
             SetTime(sumTime);
         }
 
-        private void OnGameOver() => Debug.Log("Топливо закончилось");
+        private void OnGameOver()
+            => GameOver?.Invoke();
 
-        private void OnEnable() => _timer.TimerIsOver += OnGameOver;
+        private void OnEnable()
+            => _timer.TimerIsOver += OnGameOver;
 
-        private void OnDisable() => _timer.TimerIsOver -= OnGameOver;
+        private void OnDisable()
+            => _timer.TimerIsOver -= OnGameOver;
     }
 }
