@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 using Zenject;
 
 namespace YagaClub
@@ -21,6 +20,9 @@ namespace YagaClub
         private void Construct(UpgradesConfig config)
             => _config = config;
 
+        private void Awake()
+            => OnShow();
+
         private void OnShow()
         {
             _stove.text = _config.Stove.Cost.ToString();
@@ -31,11 +33,5 @@ namespace YagaClub
             _cat.text = _config.Cat.Cost.ToString();
             _fuel.text = _config.Fuel.Cost.ToString();
         }
-
-        private void OnEnable()
-            => YandexGame.GetDataEvent += OnShow;
-
-        private void OnDisable()
-            => YandexGame.GetDataEvent -= OnShow;
     }
 }
