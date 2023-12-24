@@ -1,37 +1,7 @@
 fileFormatVersion: 2
 guid: ee9dd3092ff8f744983fe8ff54f95280
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 292705226680900115
-    second: cooking_points_0
-  - first:
-      213: -7728280192046503605
-    second: cooking_points_1
-  - first:
-      213: -7318610079397045585
-    second: cooking_points_2
-  - first:
-      213: -6634246505400914520
-    second: cooking_points_3
-  - first:
-      213: 3179918874408444727
-    second: cooking_points_4
-  - first:
-      213: 2640624771228170184
-    second: cooking_points_5
-  - first:
-      213: -835901390574613242
-    second: cooking_points_6
-  - first:
-      213: 6853355148192353048
-    second: cooking_points_7
-  - first:
-      213: 4725370046014368610
-    second: cooking_points_8
-  - first:
-      213: -3839037457391596404
-    second: cooking_points_9
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -64,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -95,36 +65,10 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 20
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -141,7 +85,20 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -154,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -180,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31a17345ad5ef0400800000000000000
-      internalID: 292705226680900115
+      spriteID: f7e23af7ec464484f83eecd798625912
+      internalID: 1694350231
       vertices: []
       indices: 
       edges: []
@@ -201,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b49616c8c12afb490800000000000000
-      internalID: -7728280192046503605
+      spriteID: a9dbc90b9fd2a8841a5a95cccdd6d71f
+      internalID: 641077098
       vertices: []
       indices: 
       edges: []
@@ -222,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faa12ff88e21f6a90800000000000000
-      internalID: -7318610079397045585
+      spriteID: 9286879fe0c067b4abe53e2b27de3583
+      internalID: -631276205
       vertices: []
       indices: 
       edges: []
@@ -243,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ada33df3fb6ee3a0800000000000000
-      internalID: -6634246505400914520
+      spriteID: ff86e50a7703f0d49aeedb6e5e67bc6c
+      internalID: -1979347812
       vertices: []
       indices: 
       edges: []
@@ -264,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 733ecab4e57512c20800000000000000
-      internalID: 3179918874408444727
+      spriteID: 2f42ca283c5007749a1838bd4e7040d7
+      internalID: 1943970760
       vertices: []
       indices: 
       edges: []
@@ -285,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c7f6222d3265a420800000000000000
-      internalID: 2640624771228170184
+      spriteID: 9a6aff940dbf4ca438bed7054a6865ff
+      internalID: 2051575998
       vertices: []
       indices: 
       edges: []
@@ -306,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60d8b833d184664f0800000000000000
-      internalID: -835901390574613242
+      spriteID: 85bd5fe31be38c841bff520aba37bac0
+      internalID: -597762401
       vertices: []
       indices: 
       edges: []
@@ -327,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81b899752320c1f50800000000000000
-      internalID: 6853355148192353048
+      spriteID: 762358126a24ac74a881fcc36c0d861f
+      internalID: -2128246383
       vertices: []
       indices: 
       edges: []
@@ -337,7 +294,7 @@ TextureImporter:
       name: cooking_points_8
       rect:
         serializedVersion: 2
-        x: 312
+        x: 323
         y: 10
         width: 133
         height: 214
@@ -348,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26b25f05503e39140800000000000000
-      internalID: 4725370046014368610
+      spriteID: 4e9acc6a920490b47af39ac6b431d34b
+      internalID: -850116115
       vertices: []
       indices: 
       edges: []
@@ -358,7 +315,7 @@ TextureImporter:
       name: cooking_points_9
       rect:
         serializedVersion: 2
-        x: 464
+        x: 475
         y: 15
         width: 123
         height: 204
@@ -369,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8c41c8c5cff8bac0800000000000000
-      internalID: -3839037457391596404
+      spriteID: 7691f170908de0e4eaa49f1d531ee027
+      internalID: 107348321
       vertices: []
       indices: 
       edges: []
@@ -386,16 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cooking_points_0: 292705226680900115
-      cooking_points_1: -7728280192046503605
-      cooking_points_2: -7318610079397045585
-      cooking_points_3: -6634246505400914520
-      cooking_points_4: 3179918874408444727
-      cooking_points_5: 2640624771228170184
-      cooking_points_6: -835901390574613242
-      cooking_points_7: 6853355148192353048
-      cooking_points_8: 4725370046014368610
-      cooking_points_9: -3839037457391596404
+      cooking_points_0: 1694350231
+      cooking_points_1: 641077098
+      cooking_points_2: -631276205
+      cooking_points_3: -1979347812
+      cooking_points_4: 1943970760
+      cooking_points_5: 2051575998
+      cooking_points_6: -597762401
+      cooking_points_7: -2128246383
+      cooking_points_8: -850116115
+      cooking_points_9: 107348321
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

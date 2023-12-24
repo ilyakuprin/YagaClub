@@ -33,7 +33,7 @@ namespace YagaClub
         {
             float inputVerticalDirection = inputData.VerticalDirection;
 
-            if (_isLadder && !StaticFormulas.IsValueZero(inputVerticalDirection))
+            if (_isLadder && !StaticFormulas.IsValueZero(inputVerticalDirection) && inputVerticalDirection > 0)
             {
                 _verticalForce = inputVerticalDirection * _speed;
             }

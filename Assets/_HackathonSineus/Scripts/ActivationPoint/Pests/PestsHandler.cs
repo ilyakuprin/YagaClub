@@ -80,6 +80,8 @@ namespace YagaClub
                     }
                 }
             }
+            else
+                UnlockTimerStart();
         }
 
         private void PestDeactivation()

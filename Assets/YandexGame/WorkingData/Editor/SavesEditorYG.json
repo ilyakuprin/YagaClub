@@ -1,5 +1,5 @@
 {
-    "idSave": 1,
+    "idSave": 9,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -11,6 +11,6 @@
     "LvlBroom": 0,
     "LvlCat": 0,
     "LvlFuel": 0,
-    "IsTrainingСompleted": false,
+    "IsTrainingСompleted": true,
     "Volume": 0.0
 }

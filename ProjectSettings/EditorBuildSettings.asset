@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/_HackathonSineus/Scenes/MainMenu.unity
     guid: ccc3a99da1b5fb24caef5946062f530b
   - enabled: 1
-    path: Assets/_HackathonSineus/Scenes/Comic.unity
-    guid: 6bb589e4389e142498a8ad615db8f655
+    path: Assets/_HackathonSineus/Scenes/Training.unity
+    guid: 5087705c693495d4fb672cfd04af1ae1
   - enabled: 1
     path: Assets/_HackathonSineus/Scenes/Game.unity
     guid: f598ffd6c078d9043b7861e0c3e6dd2a
