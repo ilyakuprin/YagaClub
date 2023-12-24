@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: UpgradesConfig
   m_EditorClassIdentifier: 
   Stove:
-    ValueUpgrade: 0.5
+    ValueUpgrade: 0.4
     NumberUpgrades: 3
-    Cost: 10
+    Cost: 500
   Boiler:
-    ValueUpgrade: 0.5
+    ValueUpgrade: 0.4
     NumberUpgrades: 3
-    Cost: 10
+    Cost: 400
   CoffeeMachine:
-    ValueUpgrade: 0.5
+    ValueUpgrade: 0.4
     NumberUpgrades: 5
-    Cost: 10
+    Cost: 400
   Aerosol:
-    ValueUpgrade: 0.5
+    ValueUpgrade: 0.3
     NumberUpgrades: 3
-    Cost: 100
+    Cost: 500
   Broom:
-    ValueUpgrade: 0.5
+    ValueUpgrade: 0.3
     NumberUpgrades: 3
-    Cost: 1000
+    Cost: 400
   Cat:
-    ValueUpgrade: 0.5
+    ValueUpgrade: 0.3
     NumberUpgrades: 3
-    Cost: 80
+    Cost: 500
   Fuel:
-    ValueUpgrade: 50
+    ValueUpgrade: 10
     NumberUpgrades: 3
-    Cost: 40
+    Cost: 250

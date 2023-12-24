@@ -12,11 +12,12 @@ namespace YagaClub
         private readonly Rigidbody2D _rigidbody;
         private readonly float _speed; 
 
-        private float _gravityScale;
         private bool _isLadder;
         private float _verticalForce;
 
-        public VerticalMovement(PlayerInput playerInput, Rigidbody2D rigidbody, PlayerConfig playerConfig)
+        public VerticalMovement(PlayerInput playerInput,
+                                Rigidbody2D rigidbody,
+                                PlayerConfig playerConfig)
         {
             _playerInput = playerInput;
             _rigidbody = rigidbody;
@@ -25,10 +26,8 @@ namespace YagaClub
 
         public bool IsLadder { get => _isLadder; }
 
-        [Inject]
-        private void RememberGravity() => _gravityScale = _rigidbody.gravityScale;
-
-        public void Initialize() => _playerInput.Inputted += Executive;
+        public void Initialize()
+            => _playerInput.Inputted += Executive;
 
         public void Executive(InputData inputData)
         {
@@ -46,19 +45,11 @@ namespace YagaClub
             Moved?.Invoke();
         }
 
-        public void FixedTick() => _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _verticalForce);
+        public void FixedTick()
+            => _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _verticalForce);
 
-        public void OffGravity()
-        {
-            _isLadder = true;
-            _rigidbody.gravityScale = 0;
-        }
-
-        public void OnGravity()
-        {
-            _isLadder = false;
-            _rigidbody.gravityScale = _gravityScale;
-        }
+        public void StayOnLadder(bool isLadder)
+            => _isLadder = isLadder;
 
         public void Dispose()
         {

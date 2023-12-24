@@ -24,7 +24,7 @@ namespace YagaClub
             if (collision.CompareTag(_tagsField.GetLadder))
             {
                 _isLadder = true;
-                _verticalMovement.OffGravity();
+                _verticalMovement.StayOnLadder(true);
             }
         }
 
@@ -33,7 +33,7 @@ namespace YagaClub
             if (collision.CompareTag(_tagsField.GetLadder) && _isLadder)
             {
                 _isLadder = false;
-                _verticalMovement.OnGravity();
+                _verticalMovement.StayOnLadder(false);
             }
         }
     }
